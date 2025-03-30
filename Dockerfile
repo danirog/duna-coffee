@@ -4,7 +4,10 @@ WORKDIR /code
 
 COPY . /code/
 
-RUN pip3 install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip3 install --upgrade pip
 
-CMD ["fastapi", "dev", "--host", "0.0.0.0", "app/main.py"]
+RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 
+# CMD ["fastapi", "dev", "--host", "0.0.0.0", "app/main.py"]
+
+CMD [ "top", "-b" ]
